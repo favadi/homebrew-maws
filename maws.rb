@@ -11,10 +11,10 @@ class Maws < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Darwin_arm64.tar.gz"
-      sha256 "99c5a9dd8a4be5bcac386f0df6a661a1f91bf720412ef9e97849d7fb1dcf989e"
+      sha256 "f22f4911fa926c17178dafb29721d9b93a80c089892b2290d9b011a1d297e098"
 
       def install
-        bin.install "maws""
+        bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
         complete -C aws_completer maws
         EOS
@@ -30,10 +30,10 @@ class Maws < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Darwin_x86_64.tar.gz"
-      sha256 "051f144b5b92d6b3f4471e98712a34db7f893af06e0a615330b9fed1df1aa17b"
+      sha256 "a3d5175eb7ffcce5b6823489027bc54607d88c1c3412ae53065d4e0095639b2a"
 
       def install
-        bin.install "maws""
+        bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
         complete -C aws_completer maws
         EOS
@@ -52,10 +52,10 @@ class Maws < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Linux_arm64.tar.gz"
-      sha256 "ae62960b0bcb319f2bca190cd09b5bb7c5dda8a604112bc3863a340c9930647c"
+      sha256 "ff27e4539266d652d0d3da97874991104a1adbc6922bff2e07887037b9e544d3"
 
       def install
-        bin.install "maws""
+        bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
         complete -C aws_completer maws
         EOS
@@ -71,10 +71,10 @@ class Maws < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Linux_x86_64.tar.gz"
-      sha256 "68ce0812ae6e4635ed6356628e9ca3adc44da81b276e771983ba77f965e9e8eb"
+      sha256 "18a43f9c9614ffd94a1325c66e11c4e8709097ac8dbff22c87341f2ec4433787"
 
       def install
-        bin.install "maws""
+        bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
         complete -C aws_completer maws
         EOS
