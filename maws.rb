@@ -10,16 +10,16 @@ class Maws < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "http://github.com/favadi/maws/releases/v0.0.2/maws_0.0.2_Darwin_arm64.tar.gz"
-      sha256 "60a201f46e8451fe3cf00e883a856c3489342eaabd837076601361188797e83e"
+      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Darwin_arm64.tar.gz"
+      sha256 "c29fac677ad88fcfc53588b2b26865682cbea935bd071cd3f623cd70e8471dc2"
 
       def install
         bin.install "maws"
       end
     end
     if Hardware::CPU.intel?
-      url "http://github.com/favadi/maws/releases/v0.0.2/maws_0.0.2_Darwin_x86_64.tar.gz"
-      sha256 "4b4d68ec28abbd41be3811ed55c1cbd59555355642b31338d5ce2c7b5d4981b6"
+      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Darwin_x86_64.tar.gz"
+      sha256 "3430d8489081eaf3bf70ea91b81aac76cd644c7615294f5c3ebe9c0183f93157"
 
       def install
         bin.install "maws"
@@ -29,16 +29,16 @@ class Maws < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "http://github.com/favadi/maws/releases/v0.0.2/maws_0.0.2_Linux_arm64.tar.gz"
-      sha256 "63aaae481d191436c88f03bf5c6d4f6247b29172fca8d3fa6573568582a62486"
+      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Linux_arm64.tar.gz"
+      sha256 "54a845e9205654cdf323db03554e0c665cf232b8c44f407817ccc725b0c8033a"
 
       def install
         bin.install "maws"
       end
     end
     if Hardware::CPU.intel?
-      url "http://github.com/favadi/maws/releases/v0.0.2/maws_0.0.2_Linux_x86_64.tar.gz"
-      sha256 "1211bdbb429f99983b84ad7d025c140ed2a68d462998c0441ae4cf8f82cc49a4"
+      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Linux_x86_64.tar.gz"
+      sha256 "2e84d4082604b4e1ac6862bb99583a5fb6cfc6d67bddfcc5ef5a4ad3ec130024"
 
       def install
         bin.install "maws"
