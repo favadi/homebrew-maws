@@ -5,45 +5,47 @@
 class Maws < Formula
   desc "MFA AWS CLI"
   homepage "https://github.com/favadi/maws"
-  version "0.0.2"
+  version "0.0.3"
   license "BSD-2-Clause"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Darwin_arm64.tar.gz"
-      sha256 "f22f4911fa926c17178dafb29721d9b93a80c089892b2290d9b011a1d297e098"
+      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Darwin_arm64.tar.gz"
+      sha256 "8f9b972680b07f1fb4c05c8ea92e1eaf0516dfb2406cf3bb1f07a0a10698a0c9"
 
       def install
         bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
-        complete -C aws_completer maws
+          complete -C aws_completer maws
         EOS
         (zsh_completion/"_maws").write <<~EOS
-        #compdef maws
-        _maws () {
-        local e
-        e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
-        if [[ -f $e ]]; then source $e; fi
-        }
+          #compdef maws
+          _maws () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
+            if [[ -f $e ]]; then source $e; fi
+            complete -C aws_completer maws
+          }
         EOS
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Darwin_x86_64.tar.gz"
-      sha256 "a3d5175eb7ffcce5b6823489027bc54607d88c1c3412ae53065d4e0095639b2a"
+      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Darwin_x86_64.tar.gz"
+      sha256 "dd6dfaf43a3f83d12f06ffaadc60253c973284c2e813c608a25b369d1b2bbe05"
 
       def install
         bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
-        complete -C aws_completer maws
+          complete -C aws_completer maws
         EOS
         (zsh_completion/"_maws").write <<~EOS
-        #compdef maws
-        _maws () {
-        local e
-        e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
-        if [[ -f $e ]]; then source $e; fi
-        }
+          #compdef maws
+          _maws () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
+            if [[ -f $e ]]; then source $e; fi
+            complete -C aws_completer maws
+          }
         EOS
       end
     end
@@ -51,40 +53,42 @@ class Maws < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Linux_arm64.tar.gz"
-      sha256 "ff27e4539266d652d0d3da97874991104a1adbc6922bff2e07887037b9e544d3"
+      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Linux_arm64.tar.gz"
+      sha256 "d66d695ad4e878f87b2954bf9f12efb0dfcc53445644bdf4f11ac146efbf7684"
 
       def install
         bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
-        complete -C aws_completer maws
+          complete -C aws_completer maws
         EOS
         (zsh_completion/"_maws").write <<~EOS
-        #compdef maws
-        _maws () {
-        local e
-        e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
-        if [[ -f $e ]]; then source $e; fi
-        }
+          #compdef maws
+          _maws () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
+            if [[ -f $e ]]; then source $e; fi
+            complete -C aws_completer maws
+          }
         EOS
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/favadi/maws/releases/download/v0.0.2/maws_0.0.2_Linux_x86_64.tar.gz"
-      sha256 "18a43f9c9614ffd94a1325c66e11c4e8709097ac8dbff22c87341f2ec4433787"
+      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Linux_x86_64.tar.gz"
+      sha256 "45665e7871f82aee213eed34a1a3464ea066de0a7d8826cd7013ddb39bc02523"
 
       def install
         bin.install "maws"
         (bash_completion/"maws_bash_completer").write <<~EOS
-        complete -C aws_completer maws
+          complete -C aws_completer maws
         EOS
         (zsh_completion/"_maws").write <<~EOS
-        #compdef maws
-        _maws () {
-        local e
-        e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
-        if [[ -f $e ]]; then source $e; fi
-        }
+          #compdef maws
+          _maws () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/aws_zsh_completer.sh
+            if [[ -f $e ]]; then source $e; fi
+            complete -C aws_completer maws
+          }
         EOS
       end
     end
