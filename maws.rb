@@ -5,13 +5,13 @@
 class Maws < Formula
   desc "MFA AWS CLI"
   homepage "https://github.com/favadi/maws"
-  version "0.0.3"
+  version "0.0.4"
   license "BSD-2-Clause"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Darwin_arm64.tar.gz"
-      sha256 "8f9b972680b07f1fb4c05c8ea92e1eaf0516dfb2406cf3bb1f07a0a10698a0c9"
+      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Darwin_arm64.tar.gz"
+      sha256 "179bccfc73f97a1bbf1027e8e9e878a8aa2389aa967012c87c2a57b8b970a55c"
 
       def install
         bin.install "maws"
@@ -30,8 +30,8 @@ class Maws < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Darwin_x86_64.tar.gz"
-      sha256 "dd6dfaf43a3f83d12f06ffaadc60253c973284c2e813c608a25b369d1b2bbe05"
+      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Darwin_x86_64.tar.gz"
+      sha256 "74d0b336945244d875f129635afcdbacdb74d3f8a48cadaf64d1c14e29c47b0e"
 
       def install
         bin.install "maws"
@@ -52,9 +52,9 @@ class Maws < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Linux_arm64.tar.gz"
-      sha256 "d66d695ad4e878f87b2954bf9f12efb0dfcc53445644bdf4f11ac146efbf7684"
+    if Hardware::CPU.intel?
+      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Linux_x86_64.tar.gz"
+      sha256 "6f08f9fd56e23be1faa4b6f89d4a32834164c9afcf622b83c6df9feedd55a7c0"
 
       def install
         bin.install "maws"
@@ -72,9 +72,9 @@ class Maws < Formula
         EOS
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/favadi/maws/releases/download/v0.0.3/maws_0.0.3_Linux_x86_64.tar.gz"
-      sha256 "45665e7871f82aee213eed34a1a3464ea066de0a7d8826cd7013ddb39bc02523"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Linux_arm64.tar.gz"
+      sha256 "2811515f3e7eea4388188f67f1be2811d05d29288657e0c27e1f5cdcd6f98be3"
 
       def install
         bin.install "maws"
