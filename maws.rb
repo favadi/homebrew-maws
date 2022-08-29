@@ -5,16 +5,17 @@
 class Maws < Formula
   desc "MFA AWS CLI"
   homepage "https://github.com/favadi/maws"
-  version "0.0.4"
+  version "0.0.5"
   license "BSD-2-Clause"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Darwin_arm64.tar.gz"
-      sha256 "179bccfc73f97a1bbf1027e8e9e878a8aa2389aa967012c87c2a57b8b970a55c"
+      url "https://github.com/favadi/maws/releases/download/v0.0.5/maws_0.0.5_Darwin_arm64.tar.gz"
+      sha256 "c49914a76c759a69c8b0cb094e2fc959edaa1572a5c51f5ef891b15ee0af72bf"
 
       def install
         bin.install "maws"
+        bin.install "docker-credential-mecr-login"
         (bash_completion/"maws_bash_completer").write <<~EOS
           complete -C aws_completer maws
         EOS
@@ -30,11 +31,12 @@ class Maws < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Darwin_x86_64.tar.gz"
-      sha256 "74d0b336945244d875f129635afcdbacdb74d3f8a48cadaf64d1c14e29c47b0e"
+      url "https://github.com/favadi/maws/releases/download/v0.0.5/maws_0.0.5_Darwin_x86_64.tar.gz"
+      sha256 "8bb3d10633266b14338c6f7100a7d35b8e62f08dca7fbc81d84af8fbc31c0305"
 
       def install
         bin.install "maws"
+        bin.install "docker-credential-mecr-login"
         (bash_completion/"maws_bash_completer").write <<~EOS
           complete -C aws_completer maws
         EOS
@@ -52,12 +54,13 @@ class Maws < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Linux_x86_64.tar.gz"
-      sha256 "6f08f9fd56e23be1faa4b6f89d4a32834164c9afcf622b83c6df9feedd55a7c0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/favadi/maws/releases/download/v0.0.5/maws_0.0.5_Linux_arm64.tar.gz"
+      sha256 "5c91cbd2a345e68694f28c555946e33087e3e759c550178ec85e24eb4d85f6d7"
 
       def install
         bin.install "maws"
+        bin.install "docker-credential-mecr-login"
         (bash_completion/"maws_bash_completer").write <<~EOS
           complete -C aws_completer maws
         EOS
@@ -72,12 +75,13 @@ class Maws < Formula
         EOS
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/favadi/maws/releases/download/v0.0.4/maws_0.0.4_Linux_arm64.tar.gz"
-      sha256 "2811515f3e7eea4388188f67f1be2811d05d29288657e0c27e1f5cdcd6f98be3"
+    if Hardware::CPU.intel?
+      url "https://github.com/favadi/maws/releases/download/v0.0.5/maws_0.0.5_Linux_x86_64.tar.gz"
+      sha256 "3099a090a45dbdae61a2cc706639ee270db9b620b39767c5a135ddfce6a48570"
 
       def install
         bin.install "maws"
+        bin.install "docker-credential-mecr-login"
         (bash_completion/"maws_bash_completer").write <<~EOS
           complete -C aws_completer maws
         EOS
